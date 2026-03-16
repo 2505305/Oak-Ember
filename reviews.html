@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reviews | Oak & Ember</title>
+
+    <style>
+        :root {
+            --oak-brown: rgb(90, 58, 48);
+            --ember-gold: rgb(243, 208, 113);
+            --ember-orange: rgb(243, 164, 60);
+        }
+
+        /* Review Card Styling */
+        .review-header {
+            padding: 60px 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .text-gold { color: var(--ember-gold); }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--ember-gold);
+        }
+
+        .rating-stars {
+            color: var(--ember-gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* HIGH VISIBILITY FORM STYLING */
+        .form-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            border: 1px solid rgba(243, 208, 113, 0.3);
+        }
+
+        .form-section label {
+            color: var(--ember-gold); /* Gold labels for visibility */
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* This forces the text you type to be white */
+        .form-section .form-control, 
+        .form-section .form-select {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid var(--ember-gold) !important;
+            color: #ffffff !important; 
+            font-size: 1rem;
+        }
+
+        /* Style for the 'Select' dropdown options */
+        .form-section .form-select option {
+            background-color: var(--oak-brown);
+            color: white;
+        }
+
+        .form-section .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .form-section .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 0 10px rgba(243, 208, 113, 0.5) !important;
+            border-color: var(--ember-gold) !important;
+        }
+    </style>
+</head>
+<body>
+
+ <div class="topnav search-container">
+  <div class="search">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="person-icon-container">
+    <a href="javascript:void;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="person-icon fa-solid fa-circle-user"></i></a>
+  </div>
+  </div>
+
+<header>
+    <img src="images/logopng.png" width="150px" height="120" alt="Oak & Ember Logo">
+</header>
+
+<ul class="topnav">
+    <li><a href="mainpage.html">Home</a></li>
+    <li><a href="reserve.html">Reserve</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About Page</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<main class="container mb-5">
+    <section class="review-header mt-4 rounded shadow">
+        <h6 class="text-gold fw-bold text-uppercase">Guestbook</h6>
+        <h1 class="display-4 fw-bold text-white">The Smoke Report</h1>
+        <div class="rating-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span class="text-white ms-2">4.8 / 5.0</span>
+        </div>
+    </section>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="review-card">
+                <div class="rating-stars">★★★★★</div>
+                <p class="fst-italic text-light">"The brisket is life-changing. You can actually taste the post oak smoke in every bite."</p>
+                <h5 class="text-gold mb-0">Marcus T.</h5>
+                <small class="text-white-50">Local Guide</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <div class="rating-stars">★★★★</div>
+                <p class="fst-italic text-light">"Best BBQ sides I've ever had. That smoked mac and cheese is legendary."</p>
+                <h5 class="text-gold mb-0">Evan G.</h5>
+                <small class="text-white-50">Verified Guest</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="review-card">
+                <div class="rating-stars">★★★★★</div>
+                <p class="fst-italic text-light">"Family atmosphere and incredible food. A new weekly tradition for us."</p>
+                <h5 class="text-gold mb-0">Daniel E.</h5>
+                <small class="text-white-50">BBQ Enthusiast</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="form-section shadow-lg">
+                <h2 class="text-center fw-bold mb-4 text-white">Share Your Experience</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Your Rating</label>
+                            <select class="form-select">
+                                <option value="5">5 Stars - Perfection</option>
+                                <option value="4">4 Stars - Great</option>
+                                <option value="3">3 Stars - Good</option>
+                                <option value="2">2 Stars - Average</option>
+                                <option value="1">1 Star - Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Review Details</label>
+                        <textarea class="form-control" rows="4" placeholder="How was your meal?"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning px-5 fw-bold py-2">Submit My Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-black text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Food</h6>
+        <ul class="list-unstyled">
+          <li><a href="menu.html" class="text-white text-decoration-none small">Menu</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Our Food</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">What's New</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Recipes</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Giftcards</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Shop</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Restaurants</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Find Oak & Embers</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">View All</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Halal</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Ember Card</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Join Now</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">How It Works</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Lost Card</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Log In</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Explore</h6>
+        <ul class="list-unstyled">
+          <li><a href="about.html" class="text-white text-decoration-none small">Our Blog</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">The App</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Sustainability</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Art & Music</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Search FAQs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none small">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Legal</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Terms</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+    <h6 class="fw-bold mb-3">Follow Us</h6>
+    <div class="d-flex gap-3 fs-5">
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+</div>
+
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/c1118625c9.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

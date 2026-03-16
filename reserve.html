@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        /* Reservation Specific Styles */
+        .reserve-section { background: rgba(0, 0, 0, 0.4); border-radius: 15px; padding: 40px; margin-top: 50px; }
+        .form-label { color: rgb(243, 208, 113); font-weight: bold; }
+        .btn-reserve { background-color: rgb(243, 164, 60); border: none; font-weight: bold; padding: 12px; }
+        .btn-reserve:hover { background-color: rgb(243, 208, 113); color: #333; }
+        
+        /* Capacity Indicator */
+        .capacity-info { border-left: 4px solid rgb(243, 164, 60); padding-left: 15px; }
+        .seating-option { background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid transparent; cursor: pointer; transition: 0.3s; }
+        .seating-option:hover { border-color: rgb(243, 164, 60); }
+    </style>
+</head>
+<body>
+
+ <div class="topnav search-container">
+  <div class="search">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="person-icon-container">
+    <a href="javascript:void;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="person-icon fa-solid fa-circle-user"></i></a>
+  </div>
+  </div>
+
+<header>
+    <img src="images/logopng.png" width="150px" height="120" alt="Oak & Ember Logo">
+</header>
+
+<ul class="topnav">
+    <li><a href="mainpage.html">Home</a></li>
+    <li><a href="reserve.html">Reserve</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About Page</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<div class="container mb-5">
+    <div class="reserve-section shadow-lg">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="mb-4" style="color: rgb(243, 208, 113);">Secure Your Seat</h1>
+                <form id="reservationForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Time</label>
+                            <select class="form-select">
+                                <option>11:00 AM</option>
+                                <option>12:00 AM</option>
+                                <option>1:00 PM</option>
+                                <option>2:00 PM</option>
+                                <option>3:00 PM</option>
+                                <option>4:00 PM</option>
+                                <option>5:00 PM</option>
+                                <option>6:00 PM</option>
+                                <option>7:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Number of Guests</label>
+                            <input type="number" class="form-control" min="1" max="64" placeholder="Max 64" id="guestCount" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Seating Type</label>
+                            <select class="form-select">
+                                <option value="table">Standard Table (32 seats avail.)</option>
+                                <option value="bench">Rustic Bench (32 seats avail.)</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label">Special Requests</label>
+                          <textarea class="form-control" rows="2" placeholder="Let us know about birthdays or allergies..."></textarea>
+                        </div>
+
+<div class="col-12 mt-3">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+        <label class="form-check-label small text-light" for="termsCheck">
+            I agree to the <a href="#" class="text-decoration-none" style="color: rgb(243, 208, 113);">Terms & Conditions</a> and Privacy Policy of Oak & Ember.
+        </label>
+    </div>
+    
+    <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" value="" id="seatingCheck" required>
+        <label class="form-check-label small text-light" for="seatingCheck">
+            I understand that seating (Table vs. Bench) is subject to availability and group size.
+        </label>
+    </div>
+</div>
+
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-reserve w-100">Book Table</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-5 ps-lg-5 mt-5 mt-lg-0">
+                <div class="capacity-info">
+                    <h3 style="color: rgb(243, 208, 113);">Our Capacity</h3>
+                    <p class="text-light">Oak & Ember welcomes up to <strong>64 guests</strong> at once across two unique styles of seating.</p>
+                    
+                    <div class="seating-option">
+                        <h6 class="mb-1">Ember Tables</h6>
+                        <small>Individual seating for couples and small groups (Up to 32 people total).</small>
+                    </div>
+
+                    <div class="seating-option">
+                        <h6 class="mb-1">Oak Benches</h6>
+                        <small>Communal-style long benches for family feasts (Up to 32 people total).</small>
+                    </div>
+
+                    <div class="mt-4 p-3 rounded" style="background: rgba(243, 208, 113, 0.1); border: 1px dashed rgb(243, 208, 113);">
+                        <p class="small mb-0 text-white">For full-house buyouts (64 guests) or events, please use our <a href="contact.html" style="color: rgb(243, 208, 113);">contact form</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/c1118625c9.js"></script>
+
+
+
+
+
+
+<footer class="bg-black text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Food</h6>
+        <ul class="list-unstyled">
+          <li><a href="menu.html" class="text-white text-decoration-none small">Menu</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Our Food</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">What's New</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Recipes</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Giftcards</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Shop</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Restaurants</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Find Oak & Embers</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">View All</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Halal</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Ember Card</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Join Now</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">How It Works</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Lost Card</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Log In</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Explore</h6>
+        <ul class="list-unstyled">
+          <li><a href="about.html" class="text-white text-decoration-none small">Our Blog</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">The App</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Sustainability</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Art & Music</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Search FAQs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none small">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Legal</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Terms</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+    <h6 class="fw-bold mb-3">Follow Us</h6>
+    <div class="d-flex gap-3 fs-5">
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+</div>
+
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
