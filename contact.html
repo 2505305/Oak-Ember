@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Oak & Ember</title>
+
+<style>
+
+
+:root {
+  --oak-brown: rgb(90, 58, 48);
+  --ember-gold: rgb(243, 208, 113);
+  --ember-orange: rgb(243, 164, 60);
+}
+body {
+  background-color: var(--oak-brown);
+  color: white;
+}
+
+header {
+  background-color: var(--ember-gold);
+}
+
+/* Carousel Style */
+.hero {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: black;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--ember-orange);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* CONTACT PAGE SPECIFIC STYLES */
+.contact-section {
+  padding: 60px 0;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.info-item i {
+  color: var(--ember-gold);
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.text-gold { color: var(--ember-gold); }
+
+/* Form Visibility Overrides */
+.form-label {
+  color: var(--ember-gold) !important;
+  font-weight: bold;
+}
+
+.form-control, .form-select {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(243, 208, 113, 0.4) !important;
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 10px rgba(243, 208, 113, 0.5) !important;
+  border-color: var(--ember-gold) !important;
+}
+
+.btn-submit {
+  background-color: var(--ember-orange);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 30px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--ember-gold);
+  color: var(--oak-brown);
+}
+
+/* Specific fix for the Subject/Select dropdown */
+.form-select {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid var(--ember-gold) !important;
+    color: white !important; /* This makes the selected text white */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f3d071' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important; /* Makes the arrow gold */
+}
+
+/* This fixes the visibility of the list items when the dropdown opens */
+.form-select option {
+    background-color: var(--oak-brown) !important;
+    color: white !important;
+}
+
+/* Style the label for the subject specifically */
+label[for="subjectSelect"] {
+    color: var(--ember-gold);
+    font-weight: bold;
+}
+
+.search-input{
+  background-color: white !important;
+}
+
+
+</style>
+</head>
+<body>
+
+ <div class="topnav search-container">
+  <div class="search">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="person-icon-container">
+    <a href="javascript:void;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="person-icon fa-solid fa-circle-user"></i></a>
+  </div>
+  </div>
+
+<header>
+  <img src="images/logopng.png" width="150px" height="120" alt="Oak & Ember Logo">
+</header>
+
+<ul class="topnav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="reserve.html">Reserve</a></li>
+  <li><a href="menu.html">Menu</a></li>
+  <li><a href="about.html">About Page</a></li>
+  <li><a href="reviews.html">Reviews</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<div class="hero">
+  <div class="carousel-container">
+    <div class="carousel-slides">
+      <img src="images/food 1.png" class="carousel-slide">
+      <img src="images/food 2.jpg" class="carousel-slide">
+      <img src="images/food 3.jpg" class="carousel-slide">
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</div>
+
+<main class="container contact-section">
+  <div class="row g-5">
+    <div class="col-lg-5">
+      <h2 class="display-5 fw-bold mb-4">Get In <span class="text-gold">Touch</span></h2>
+      <p class="lead mb-5">Whether you're looking to cater a party or just want to tell us how much you loved the brisket, we're all ears.</p>
+      
+      <div class="info-item d-flex mb-4">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h5 class="mb-0 text-gold">Location</h5>
+          <p>123 Pitmaster Lane, Smoke City, TX 75001</p>
+        </div>
+      </div>
+
+      <div class="info-item d-flex mb-4">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h5 class="mb-0 text-gold">Phone</h5>
+          <p>(555) 123-4567</p>
+        </div>
+      </div>
+
+      <div class="info-item d-flex mb-4">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h5 class="mb-0 text-gold">Email</h5>
+          <p>hello@oakandember.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="contact-card shadow-lg">
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="Oak&Ember@hotmail.com">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <select class="form-select">
+              <option>General Inquiry</option>
+              <option>Catering Request</option>
+              <option>Private Events</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Sign-up / Log-in</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label text-dark">Email address</label>
+            <input type="email" class="form-control text-dark">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-dark">Password</label>
+            <input type="password" class="form-control text-dark">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-black text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Food</h6>
+        <ul class="list-unstyled">
+          <li><a href="menu.html" class="text-white text-decoration-none small">Menu</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Our Food</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">What's New</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Recipes</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Giftcards</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Shop</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Restaurants</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Find Oak & Embers</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">View All</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Halal</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Ember Card</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Join Now</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">How It Works</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Lost Card</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Log In</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Explore</h6>
+        <ul class="list-unstyled">
+          <li><a href="about.html" class="text-white text-decoration-none small">Our Blog</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">The App</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Sustainability</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Art & Music</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Help</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Search FAQs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none small">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <h6 class="fw-bold mb-3">Legal</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none small">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Terms</a></li>
+          <li><a href="#" class="text-white text-decoration-none small">Cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 mb-4">
+    <h6 class="fw-bold mb-3">Follow Us</h6>
+    <div class="d-flex gap-3 fs-5">
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+</div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelector('.carousel-slides');
+  const slide = document.querySelectorAll('.carousel-slide');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  let index = 0;
+  const totalSlides = slide.length;
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide(index);
+  }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+  setInterval(nextSlide, 20000);
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/c1118625c9.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
